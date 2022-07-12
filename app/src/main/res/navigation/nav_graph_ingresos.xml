@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/resumenIngresosFragment">
+
+    <fragment
+        android:id="@+id/resumenIngresosFragment"
+        android:name="com.erazojavier.proyecto_mybudget.ingresos.IngresosResumenFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_ingresos_resumen">
+
+        <action
+            android:id="@+id/action_resumenIngresosFragment_to_nuevoIngresoFragment"
+            app:destination="@id/nuevoIngresoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nuevoIngresoFragment"
+        android:name="com.erazojavier.proyecto_mybudget.ingresos.IngresoNuevoFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_ingreso_nuevo">
+
+        <action
+            android:id="@+id/action_nuevoIngresoFragment_to_resumenIngresoFragment"
+            app:destination="@id/resumenIngresosFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph3"
+    app:startDestination="@id/egresosResumenFragment">
+
+    <fragment
+        android:id="@+id/egresoNuevoFragment"
+        android:name="com.erazojavier.proyecto_mybudget.egresos.EgresoNuevoFragment"
+        android:label="EgresoNuevoFragment" >
+        <action
+            android:id="@+id/action_egresoNuevoFragment_to_egresosResumenFragment"
+            app:destination="@id/egresosResumenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/egresosResumenFragment"
+        android:name="com.erazojavier.proyecto_mybudget.egresos.EgresosResumenFragment"
+        android:label="EgresosResumenFragment" >
+        <action
+            android:id="@+id/action_egresosResumenFragment_to_egresoNuevoFragment"
+            app:destination="@id/egresoNuevoFragment" />
+    </fragment>
+</navigation>

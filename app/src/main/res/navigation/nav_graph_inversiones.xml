@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inversionesNoticiasFragment">
+
+    <fragment
+        android:id="@+id/inversionesNoticiasFragment"
+        android:name="com.erazojavier.proyecto_mybudget.inversiones.InversionesNoticiasFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_inversiones_noticias">
+        <action
+            android:id="@+id/action_inversionesNoticiasFragment_to_inversionNoticiaIndFragment"
+            app:destination="@id/inversionNoticiaIndFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inversionNoticiaIndFragment"
+        android:name="com.erazojavier.proyecto_mybudget.inversiones.InversionesNoticiaIndividualFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_inversiones_noticias_ind">
+        <action
+            android:id="@+id/action_inversionNoticiaIndFragment_to_inversionesNoticiasFragment"
+            app:destination="@id/inversionesNoticiasFragment" />
+    </fragment>
+</navigation>

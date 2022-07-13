@@ -14,10 +14,15 @@
         android:theme="@style/Theme.Proyecto_MyBudget"
         tools:targetApi="31">
         <activity
-            android:name=".inversiones.InversionesActivity"
+            android:name=".perfilActivity"
+            android:exported="false"
+            android:label="@string/title_activity_perfil"
+            android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar" />
+        <activity
+            android:name=".home.homeActivity"
             android:exported="true"
-            android:label="@string/title_activity_inversiones"
-            android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar" >
+            android:label="HomeActivity"
+            android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,9 +33,7 @@
             android:name=".ahorros.AhorrosActivity"
             android:exported="false"
             android:label="@string/title_activity_ahorros"
-            android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar"></activity>
         <activity
             android:name=".egresos.EgresosActivity"
             android:exported="false"
@@ -40,7 +43,7 @@
             android:name=".ingresos.IngresosActivity"
             android:exported="false"
             android:label="@string/title_activity_resumen_ingresos"
-            android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar"></activity>
+            android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.erazojavier.proyecto_mybudget.home.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_HomeFragment_to_ingresosResumenFragment"
+            app:destination="@id/ingresosResumenFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_egresosResumenFragment"
+            app:destination="@id/egresosResumenFragment2" />
+        <action
+            android:id="@+id/action_HomeFragment_to_ahorrosResumenFragment"
+            app:destination="@id/ahorrosResumenFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_inversionesNoticiasFragment2"
+            app:destination="@id/inversionesNoticiasFragment2" />
+        <action
+            android:id="@+id/action_HomeFragment_to_perfilActivity"
+            app:destination="@id/perfilActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/ingresosResumenFragment"
+        android:name="com.erazojavier.proyecto_mybudget.ingresos.IngresosResumenFragment"
+        android:label="fragment_ingresos_resumen"
+        tools:layout="@layout/fragment_ingresos_resumen" />
+    <fragment
+        android:id="@+id/egresosResumenFragment2"
+        android:name="com.erazojavier.proyecto_mybudget.egresos.EgresosResumenFragment"
+        android:label="fragment_egresos_resumen"
+        tools:layout="@layout/fragment_egresos_resumen" />
+    <fragment
+        android:id="@+id/ahorrosResumenFragment"
+        android:name="com.erazojavier.proyecto_mybudget.ahorros.AhorrosResumenFragment"
+        android:label="fragment_ahorro_resumen"
+        tools:layout="@layout/fragment_ahorro_resumen" />
+    <fragment
+        android:id="@+id/inversionesNoticiasFragment2"
+        android:name="com.erazojavier.proyecto_mybudget.inversiones.InversionesNoticiasFragment"
+        android:label="fragment_inversiones_noticias"
+        tools:layout="@layout/fragment_inversiones_noticias" />
+    <activity
+        android:id="@+id/perfilActivity"
+        android:name="com.erazojavier.proyecto_mybudget.perfil.perfilActivity"
+        android:label="activity_perfil"
+        tools:layout="@layout/activity_perfil" />
+</navigation>

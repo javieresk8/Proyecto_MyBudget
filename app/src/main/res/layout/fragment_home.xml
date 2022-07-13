@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment">
+
+    <Button
+        android:id="@+id/botonHomeIngresos"
+        android:layout_width="132dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="52dp"
+        android:text="Ingresos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonCuentas" />
+
+    <Button
+        android:id="@+id/botonCuentas"
+        android:layout_width="293dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="51dp"
+        android:text="Mis Cuentas\nBancarias"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonPerfil" />
+
+    <Button
+        android:id="@+id/botonEgresos"
+        android:layout_width="122dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="56dp"
+        android:text="Egresos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonCuentas" />
+
+    <Button
+        android:id="@+id/botonAhorros"
+        android:layout_width="295dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="46dp"
+        android:text="Mis Ahorros"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonHomeIngresos" />
+
+    <Button
+        android:id="@+id/botonInversiones"
+        android:layout_width="299dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="43dp"
+        android:text="Inversiones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonAhorros" />
+
+    <Button
+        android:id="@+id/botonPerfil"
+        android:layout_width="122dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="68dp"
+        android:text="Mi perfil"
+        app:layout_constraintBottom_toTopOf="@+id/botonCuentas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/botonCuentas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/botonPerfil"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

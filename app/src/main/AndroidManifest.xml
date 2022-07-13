@@ -15,9 +15,14 @@
         tools:targetApi="31">
         <activity
             android:name=".login.loginActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_login"
-            android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar" />
+            android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".cuentas.cuentasActivity"
             android:exported="false"
@@ -35,15 +40,10 @@
             android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar" />
         <activity
             android:name=".home.homeActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="HomeActivity"
-            android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".inversiones.InversionesActivity"
             android:exported="false"

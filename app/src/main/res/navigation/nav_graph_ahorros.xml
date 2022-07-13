@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_resumenAhorrosFragment_to_nuevoAhorroFragment"
             app:destination="@id/nuevoAhorroFragment" />
+        <action
+            android:id="@+id/action_resumenAhorrosFragment_to_ahorroIndividualFragment"
+            app:destination="@id/ahorroIndividualFragment" />
     </fragment>
     <fragment
         android:id="@+id/nuevoAhorroFragment"
@@ -21,6 +24,15 @@
         tools:layout="@layout/fragment_ahorro_nuevo">
         <action
             android:id="@+id/action_nuevoAhorroFragment_to_resumenAhorrosFragment"
+            app:destination="@id/resumenAhorrosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ahorroIndividualFragment"
+        android:name="com.erazojavier.proyecto_mybudget.ahorros.AhorroIndividualFragment"
+        android:label="fragment_ahorro_individual"
+        tools:layout="@layout/fragment_ahorro_individual" >
+        <action
+            android:id="@+id/action_ahorroIndividualFragment_to_resumenAhorrosFragment"
             app:destination="@id/resumenAhorrosFragment" />
     </fragment>
 </navigation>

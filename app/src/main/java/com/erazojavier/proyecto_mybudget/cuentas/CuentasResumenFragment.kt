@@ -6,14 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.erazojavier.proyecto_mybudget.cuentas.databinding.FragmentFirstBinding
+import com.erazojavier.proyecto_mybudget.databinding.FragmentCuentasResumenBinding
+//import com.erazojavier.proyecto_mybudget.cuentas.databinding.FragmentFirstBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class CuentasResumenFragment : Fragment() {
 
-    private var _binding: FragmentFirstBinding? = null
+    private var _binding: FragmentCuentasResumenBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,18 +25,11 @@ class CuentasResumenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        _binding = FragmentCuentasResumenBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

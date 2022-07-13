@@ -14,17 +14,17 @@
         android:theme="@style/Theme.Proyecto_MyBudget"
         tools:targetApi="31">
         <activity
-            android:name=".loginActivity"
+            android:name=".login.loginActivity"
             android:exported="false"
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar" />
         <activity
-            android:name=".cuentasActivity"
+            android:name=".cuentas.cuentasActivity"
             android:exported="false"
             android:label="@string/title_activity_cuentas"
             android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar" />
         <activity
-            android:name=".ahorrosActivity"
+            android:name=".ahorros.AhorrosActivity"
             android:exported="false"
             android:label="@string/title_activity_ahorros"
             android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar" />
@@ -45,9 +45,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ahorros.AhorrosActivity"
+            android:name=".inversiones.InversionesActivity"
             android:exported="false"
-            android:label="@string/title_activity_ahorros"
+            android:label="Inversiones"
             android:theme="@style/Theme.Proyecto_MyBudget.NoActionBar" />
         <activity
             android:name=".egresos.EgresosActivity"

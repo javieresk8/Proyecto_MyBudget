@@ -8,7 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.erazojavier.proyecto_mybudget.R
+import com.erazojavier.proyecto_mybudget.ahorros.AhorrosActivity
+import com.erazojavier.proyecto_mybudget.cuentas.CuentasResumenFragment
+import com.erazojavier.proyecto_mybudget.cuentas.cuentasActivity
 import com.erazojavier.proyecto_mybudget.databinding.FragmentHomeBinding
+import com.erazojavier.proyecto_mybudget.egresos.EgresosActivity
+import com.erazojavier.proyecto_mybudget.ingresos.IngresosActivity
+import com.erazojavier.proyecto_mybudget.inversiones.InversionesActivity
 import com.erazojavier.proyecto_mybudget.perfil.perfilActivity
 
 //import com.erazojavier.proyecto_mybudget.home.databinding.FragmentFirstBinding
@@ -37,20 +43,34 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.botonCuentas.setOnClickListener {
+            val miIntent =  Intent(activity, cuentasActivity::class.java)
+            startActivity(miIntent)
+        }
+
+
         binding.botonHomeIngresos.setOnClickListener {
-            findNavController().navigate(R.id.action_HomeFragment_to_ingresosResumenFragment)
+            val miIntent =  Intent(activity, IngresosActivity::class.java)
+            startActivity(miIntent)
         }
 
         binding.botonEgresos.setOnClickListener {
-            findNavController().navigate(R.id.action_HomeFragment_to_egresosResumenFragment)
+            val miIntent =  Intent(activity, EgresosActivity::class.java)
+            startActivity(miIntent)
         }
 
         binding.botonAhorros.setOnClickListener {
-            findNavController().navigate(R.id.action_HomeFragment_to_ahorrosResumenFragment)
+            val miIntent =  Intent(activity, AhorrosActivity::class.java)
+            startActivity(miIntent)
         }
 
         binding.botonPerfil.setOnClickListener {
             val miIntent =  Intent(activity, perfilActivity::class.java)
+            startActivity(miIntent)
+        }
+
+        binding.botonInversiones.setOnClickListener {
+            val miIntent =  Intent(activity, InversionesActivity::class.java)
             startActivity(miIntent)
         }
     }

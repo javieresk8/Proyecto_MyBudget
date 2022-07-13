@@ -17,4 +17,6 @@
     <string name="title_activity_inversiones">InversionesActivity</string>
     <string name="title_activity_home">home</string>
     <string name="title_activity_perfil">perfilActivity</string>
+    <string name="title_activity_cuentas">cuentasActivity</string>
+    <string name="title_activity_login">loginActivity</string>
 </resources>

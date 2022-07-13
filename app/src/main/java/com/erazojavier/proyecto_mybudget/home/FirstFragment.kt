@@ -1,5 +1,6 @@
 package com.erazojavier.proyecto_mybudget.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,8 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.erazojavier.proyecto_mybudget.R
 import com.erazojavier.proyecto_mybudget.databinding.FragmentHomeBinding
+import com.erazojavier.proyecto_mybudget.perfil.perfilActivity
+
 //import com.erazojavier.proyecto_mybudget.home.databinding.FragmentFirstBinding
 
 /**
@@ -47,7 +50,8 @@ class FirstFragment : Fragment() {
         }
 
         binding.botonPerfil.setOnClickListener {
-            findNavController().navigate(R.id.action_HomeFragment_to_perfilActivity)
+            val miIntent =  Intent(activity, perfilActivity::class.java)
+            startActivity(miIntent)
         }
     }
 

@@ -1,4 +1,4 @@
-package com.erazojavier.proyecto_mybudget.perfil
+package com.erazojavier.proyecto_mybudget.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,15 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.erazojavier.proyecto_mybudget.databinding.FragmentPerfilBinding
-//import com.erazojavier.proyecto_mybudget.perfil.databinding.FragmentFirstBinding
+import com.erazojavier.proyecto_mybudget.R
+import com.erazojavier.proyecto_mybudget.databinding.FragmentLoginBinding
+//import com.erazojavier.proyecto_mybudget.login.databinding.FragmentFirstBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class LoginFragment : Fragment() {
 
-    private var _binding: FragmentPerfilBinding? = null
+    private var _binding: FragmentLoginBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,11 +26,18 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentPerfilBinding.inflate(inflater, container, false)
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.buttonFirst.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

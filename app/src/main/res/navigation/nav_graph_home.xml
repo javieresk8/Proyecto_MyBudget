@@ -22,9 +22,6 @@
         <action
             android:id="@+id/action_HomeFragment_to_inversionesNoticiasFragment2"
             app:destination="@id/inversionesNoticiasFragment2" />
-        <action
-            android:id="@+id/action_HomeFragment_to_perfilActivity"
-            app:destination="@id/perfilActivity" />
     </fragment>
     <fragment
         android:id="@+id/ingresosResumenFragment"
@@ -46,9 +43,4 @@
         android:name="com.erazojavier.proyecto_mybudget.inversiones.InversionesNoticiasFragment"
         android:label="fragment_inversiones_noticias"
         tools:layout="@layout/fragment_inversiones_noticias" />
-    <activity
-        android:id="@+id/perfilActivity"
-        android:name="com.erazojavier.proyecto_mybudget.perfil.perfilActivity"
-        android:label="activity_perfil"
-        tools:layout="@layout/activity_perfil" />
 </navigation>

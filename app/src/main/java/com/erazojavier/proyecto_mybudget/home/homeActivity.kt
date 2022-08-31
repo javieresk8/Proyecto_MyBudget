@@ -15,10 +15,14 @@ class homeActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeBinding
-
+    companion object {
+        var usuario = ""
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        var usuario = this.getIntent().getExtras()?.getString("email")
+        println("El usuario que recibo es $usuario")
+        homeActivity.usuario = usuario.toString()
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

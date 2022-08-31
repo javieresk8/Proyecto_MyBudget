@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.erazojavier.proyecto_mybudget.R
 import com.erazojavier.proyecto_mybudget.databinding.FragmentEgresoNuevoBinding
 import com.erazojavier.proyecto_mybudget.databinding.FragmentIngresoNuevoBinding
+import com.erazojavier.proyecto_mybudget.home.homeActivity
 import com.erazojavier.proyecto_mybudget.models.CuentaBancaria
 import com.erazojavier.proyecto_mybudget.models.Egreso
 import com.erazojavier.proyecto_mybudget.models.Ingreso
@@ -29,7 +30,7 @@ class EgresoNuevoFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    val usuario = "javieresk8"
+    val usuario = homeActivity.usuario
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

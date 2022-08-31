@@ -1,6 +1,7 @@
 package com.erazojavier.proyecto_mybudget.cuentas
 
 import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,6 +15,7 @@ import com.erazojavier.proyecto_mybudget.R
 import com.erazojavier.proyecto_mybudget.adapters.CuentaBancariaAdapter
 import com.erazojavier.proyecto_mybudget.adapters.EgresoAdapter
 import com.erazojavier.proyecto_mybudget.databinding.FragmentCuentasResumenBinding
+import com.erazojavier.proyecto_mybudget.home.homeActivity
 import com.erazojavier.proyecto_mybudget.models.CuentaBancaria
 import com.erazojavier.proyecto_mybudget.models.Egreso
 import com.google.firebase.firestore.ktx.firestore
@@ -32,7 +34,8 @@ class CuentasResumenFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    val usuario = "javieresk8"
+    val usuario = homeActivity.usuario
+
     var cuentas = arrayListOf<CuentaBancaria>()
 
     override fun onCreateView(
@@ -48,9 +51,15 @@ class CuentasResumenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         obtenerCuentas(usuario)
+        cuentas.clear()
         binding.buttonNuevaCuenta.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+
+//        binding.buttonIrInicio.setOnClickListener{
+//            val miIntent =  Intent(activity, homeActivity::class.java)
+//            startActivity(miIntent)
+//        }
     }
 
     private fun obtenerCuentas(usuario: String) {

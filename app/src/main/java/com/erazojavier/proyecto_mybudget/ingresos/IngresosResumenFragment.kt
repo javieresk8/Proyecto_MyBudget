@@ -1,6 +1,7 @@
 package com.erazojavier.proyecto_mybudget.ingresos
 
 import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.erazojavier.proyecto_mybudget.R
 import com.erazojavier.proyecto_mybudget.adapters.IngresosAdapter
 import com.erazojavier.proyecto_mybudget.databinding.FragmentIngresosResumenBinding
+import com.erazojavier.proyecto_mybudget.home.homeActivity
 import com.erazojavier.proyecto_mybudget.models.Ingreso
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -27,7 +29,7 @@ class IngresosResumenFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    val usuario = "javieresk8"
+    val usuario = homeActivity.usuario
 
     var ingresos = arrayListOf<Ingreso>()
 
@@ -46,10 +48,14 @@ class IngresosResumenFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         obtenerIngresos(usuario)
 
-
+        ingresos.clear()
         binding.buttonNuevoIngreso.setOnClickListener {
             findNavController().navigate(R.id.action_resumenIngresosFragment_to_nuevoIngresoFragment)
         }
+//        binding.buttonIrAlInicioIng.setOnClickListener{
+//            val miIntent =  Intent(activity, homeActivity::class.java)
+//            startActivity(miIntent)
+//        }
 
 
 

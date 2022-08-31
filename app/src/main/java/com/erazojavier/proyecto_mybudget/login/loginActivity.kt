@@ -2,9 +2,7 @@ package com.erazojavier.proyecto_mybudget.login
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -15,6 +13,7 @@ import com.erazojavier.proyecto_mybudget.home.homeActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.erazojavier.proyecto_mybudget.login.FileHandler
 
 //import com.erazojavier.proyecto_mybudget.login.databinding.ActivityLoginBinding
 
@@ -33,11 +32,14 @@ class loginActivity : AppCompatActivity() {
 
 
     private lateinit var auth: FirebaseAuth
+    lateinit var manejadorArchivo: FileHandler
     lateinit var editTextEmail: EditText
     lateinit var editTextPassword:EditText
-
+    lateinit var checkBoxRecordarme: Switch
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        manejadorArchivo = SharedPreferencesManager(this)
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -46,6 +48,9 @@ class loginActivity : AppCompatActivity() {
         buttonLogin = findViewById(R.id.buttonLogin2)
         editTextEmail = findViewById(R.id.email)
         editTextPassword = findViewById(R.id.clave)
+        checkBoxRecordarme = findViewById(R.id.checkBoxRecordarme)
+        LeerDatosDePreferencias()
+
 
         val navController = findNavController(R.id.nav_host_fragment_content_login)
         appBarConfiguration = AppBarConfiguration(navController.graph)
@@ -66,7 +71,7 @@ class loginActivity : AppCompatActivity() {
             if(!ValidarDatosRequeridos())
                 return@setOnClickListener
             //Guardar datos en preferencias.
-            //GuardarDatosEnPreferencias()
+            GuardarDatosEnPreferencias()
             //Si pasa validación de datos requeridos, ir a pantalla principal
             //val intencion = Intent(this, MainActivity::class.java)
             //intencion.putExtra(EXTRA_LOGIN, email)
@@ -123,6 +128,29 @@ class loginActivity : AppCompatActivity() {
             return false
         }
         return true
+    }
+
+    private fun LeerDatosDePreferencias(){
+        val listadoLeido = manejadorArchivo.ReadInformation()
+        if(listadoLeido.first != null){
+            checkBoxRecordarme.isChecked = true
+        }
+        editTextEmail.setText ( listadoLeido.first )
+        editTextPassword.setText ( listadoLeido.second )
+    }
+
+
+    private fun GuardarDatosEnPreferencias(){
+        val email = editTextEmail.text.toString()
+        val clave = editTextPassword.text.toString()
+        val listadoAGrabar:Pair<String,String>
+        if(checkBoxRecordarme.isChecked){
+            listadoAGrabar = email to clave
+        }
+        else{
+            listadoAGrabar ="" to ""
+        }
+        manejadorArchivo.SaveInformation(listadoAGrabar)
     }
 
 }

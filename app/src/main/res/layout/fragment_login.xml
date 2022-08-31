@@ -10,25 +10,13 @@
         android:id="@+id/email"
         android:layout_width="334dp"
         android:layout_height="61dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="e-mail"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
-
-    <EditText
-        android:id="@+id/clave"
-        android:layout_width="326dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:hint="contraseña"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <TextView
         android:id="@+id/textView22"
@@ -45,30 +33,31 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
-        android:id="@+id/recuerdame"
+        android:id="@+id/checkBoxRecordarme"
         android:layout_width="212dp"
         android:layout_height="47dp"
         android:layout_marginStart="33dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="132dp"
         android:layout_marginEnd="252dp"
         android:text="Recuerdame"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.011"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clave" />
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <Button
         android:id="@+id/buttonLogin2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="139dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="145dp"
         android:text="Ingresar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recuerdame" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxRecordarme" />
 
     <ImageView
         android:id="@+id/imageView12"
@@ -93,5 +82,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin2" />
+
+    <EditText
+        android:id="@+id/clave"
+        android:layout_width="327dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginBottom="54dp"
+        android:ems="10"
+        android:hint="contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxRecordarme"
+        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toTopOf="@+id/email"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

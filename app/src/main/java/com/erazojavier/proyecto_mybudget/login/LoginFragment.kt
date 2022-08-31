@@ -39,7 +39,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.botonIngresar.setOnClickListener {
+        binding.buttonLogin2.setOnClickListener {
             val miIntent =  Intent(activity, homeActivity::class.java)
             startActivity(miIntent)
         }

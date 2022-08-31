@@ -10,10 +10,9 @@
         android:id="@+id/botonHomeIngresos"
         android:layout_width="132dp"
         android:layout_height="63dp"
-        android:layout_marginStart="68dp"
         android:layout_marginTop="52dp"
         android:text="Ingresos"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/botonCuentas"
         app:layout_constraintTop_toBottomOf="@+id/botonCuentas" />
 
     <Button
@@ -21,7 +20,7 @@
         android:layout_width="293dp"
         android:layout_height="63dp"
         android:layout_marginStart="67dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="38dp"
         android:layout_marginEnd="51dp"
         android:text="Mis Cuentas\nBancarias"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,61 +33,41 @@
         android:layout_width="122dp"
         android:layout_height="60dp"
         android:layout_marginTop="52dp"
-        android:layout_marginEnd="56dp"
         android:text="Egresos"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/botonCuentas"
         app:layout_constraintTop_toBottomOf="@+id/botonCuentas" />
 
     <Button
         android:id="@+id/botonAhorros"
         android:layout_width="295dp"
         android:layout_height="66dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="46dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="44dp"
         android:text="Mis Ahorros"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botonHomeIngresos" />
+        app:layout_constraintEnd_toEndOf="@+id/botonEgresos"
+        app:layout_constraintStart_toStartOf="@+id/botonHomeIngresos"
+        app:layout_constraintTop_toBottomOf="@+id/botonEgresos" />
 
     <Button
         android:id="@+id/botonInversiones"
         android:layout_width="299dp"
         android:layout_height="58dp"
-        android:layout_marginStart="69dp"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="43dp"
         android:text="Inversiones"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/botonAhorros"
+        app:layout_constraintStart_toStartOf="@+id/botonAhorros"
         app:layout_constraintTop_toBottomOf="@+id/botonAhorros" />
 
     <Button
         android:id="@+id/botonPerfil"
-        android:layout_width="122dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="76dp"
+        android:layout_width="290dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="68dp"
         android:layout_marginTop="160dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginEnd="53dp"
         android:text="Mi perfil"
-        app:layout_constraintBottom_toTopOf="@+id/botonCuentas"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="43dp"
-        app:layout_constraintBottom_toTopOf="@+id/botonCuentas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/botonPerfil"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

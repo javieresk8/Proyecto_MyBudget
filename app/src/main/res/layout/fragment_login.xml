@@ -7,28 +7,28 @@
     tools:context=".FirstFragment">
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/email"
         android:layout_width="334dp"
         android:layout_height="61dp"
         android:layout_marginStart="33dp"
         android:layout_marginTop="33dp"
         android:ems="10"
+        android:hint="e-mail"
         android:inputType="textPersonName"
-        android:text="E-mail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/clave"
         android:layout_width="326dp"
         android:layout_height="60dp"
         android:layout_marginStart="33dp"
         android:layout_marginTop="28dp"
         android:ems="10"
+        android:hint="contraseña"
         android:inputType="textPersonName"
-        android:text="Contraseña"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <TextView
         android:id="@+id/textView22"
@@ -45,9 +45,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
-        android:id="@+id/switch1"
-        android:layout_width="185dp"
-        android:layout_height="48dp"
+        android:id="@+id/recuerdame"
+        android:layout_width="212dp"
+        android:layout_height="47dp"
         android:layout_marginStart="33dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="252dp"
@@ -55,10 +55,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/clave" />
 
     <Button
-        android:id="@+id/botonIngresar"
+        android:id="@+id/buttonLogin2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="139dp"
@@ -68,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        app:layout_constraintTop_toBottomOf="@+id/recuerdame" />
 
     <ImageView
         android:id="@+id/imageView12"
@@ -92,6 +92,6 @@
         android:text="ó"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botonIngresar" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

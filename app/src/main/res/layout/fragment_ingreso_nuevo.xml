@@ -28,9 +28,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputNombreIngr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Escriba el nombre" />
+            android:hint="@string/nombreIngresoHint"
+            android:textColorHint="#616161"
+            tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -65,10 +68,12 @@
                 android:text="Monto" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputMontoIngreso"
                 android:layout_width="176dp"
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputMontoIngr"
                     android:layout_width="192dp"
                     android:layout_height="wrap_content"
                     android:hint="Monto $" />
@@ -94,6 +99,7 @@
                 android:layout_height="53dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputFrecIngr"
                     android:layout_width="214dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10sp"
@@ -122,6 +128,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputCuentaIngr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Escoja la cuenta que usó" />
@@ -145,13 +152,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputDescIngr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Describa el ingreso" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonNuevoIngr"
         android:layout_width="385dp"
         android:layout_height="57dp"
         android:layout_marginTop="32dp"
@@ -166,9 +174,9 @@
         android:layout_height="57dp"
         android:layout_marginTop="8dp"
         android:text="Cancelar"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/buttonNuevoIngr"
+        app:layout_constraintStart_toStartOf="@+id/buttonNuevoIngr"
+        app:layout_constraintTop_toBottomOf="@+id/buttonNuevoIngr"
         app:rippleColor="@color/black" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

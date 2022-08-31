@@ -7,166 +7,6 @@
     tools:context=".egresos.EgresosResumenFragment">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_egresos_individual2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        app:cardBackgroundColor="#FFEAE5E5"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/card_view_egreso_individual"
-        app:layout_constraintStart_toStartOf="@+id/card_view_egreso_individual"
-        app:layout_constraintTop_toBottomOf="@+id/card_view_egreso_individual">
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:padding="10sp">
-
-            <TextView
-                android:id="@+id/textViewNombreEgreso2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Nombre del egreso"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.15"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textViewDescEgreso2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="4dp"
-                android:text="Lorem ipsum dolor"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewNombreEgreso2" />
-
-            <TextView
-                android:id="@+id/textViewMontoEgreso2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="$56.99"
-                app:layout_constraintEnd_toEndOf="@+id/textViewDescEgreso2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescEgreso2"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDescEgreso2" />
-
-            <ImageView
-                android:id="@+id/imageViewMoneda2"
-                android:layout_width="35dp"
-                android:layout_height="39dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_baseline_monetization_on_24"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewNombreEgreso2" />
-
-            <ImageView
-                android:id="@+id/imageViewArrow2"
-                android:layout_width="37dp"
-                android:layout_height="39dp"
-                android:layout_marginEnd="15dp"
-                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_egreso_individual"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        app:cardBackgroundColor="#FFEAE5E5"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/card_view_total_egresos"
-        app:layout_constraintStart_toStartOf="@+id/card_view_total_egresos"
-        app:layout_constraintTop_toBottomOf="@+id/card_view_total_egresos">
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:padding="10sp">
-
-            <TextView
-                android:id="@+id/textViewNombreEgreso1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Nombre del egreso"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.15"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textViewDescEgreso1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="4dp"
-                android:text="Lorem ipsum dolor"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewNombreEgreso1" />
-
-            <TextView
-                android:id="@+id/textViewMontoEgreso1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="$56.99"
-                app:layout_constraintEnd_toEndOf="@+id/textViewDescEgreso1"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textViewDescEgreso1"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDescEgreso1" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="35dp"
-                android:layout_height="39dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_baseline_monetization_on_24"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewNombreEgreso1" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="37dp"
-                android:layout_height="39dp"
-                android:layout_marginEnd="15dp"
-                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
         android:id="@+id/card_view_total_egresos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -250,5 +90,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewEgresos"
+        android:layout_width="409dp"
+        android:layout_height="524dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="@+id/card_view_total_egresos"
+        app:layout_constraintStart_toStartOf="@+id/card_view_total_egresos"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_total_egresos" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

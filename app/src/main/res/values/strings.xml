@@ -18,6 +18,6 @@
     <string name="title_activity_home">home</string>
     <string name="title_activity_perfil">perfilActivity</string>
     <string name="title_activity_cuentas">cuentasActivity</string>
-    <string name="title_activity_login">loginActivity</string>
+    <string name="title_activity_login">My Budget</string>
     <string name="nombreIngresoHint">Escriba el nombre</string>
 </resources>

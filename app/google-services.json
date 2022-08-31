@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "217370015773",
+    "project_id": "proyectomybudget",
+    "storage_bucket": "proyectomybudget.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217370015773:android:d680fdfb2ad28474c12ef4",
+        "android_client_info": {
+          "package_name": "com.erazojavier.proyecto_mybudget"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217370015773-1l602tei0mui259d2l58ojhdu43broh6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWolAFndL2nG6aSwlvWXRPIrKs1baJc1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217370015773-1l602tei0mui259d2l58ojhdu43broh6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

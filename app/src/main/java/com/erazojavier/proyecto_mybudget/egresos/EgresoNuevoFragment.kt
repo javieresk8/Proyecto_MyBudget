@@ -1,6 +1,8 @@
 package com.erazojavier.proyecto_mybudget.egresos
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.erazojavier.proyecto_mybudget.R
 import com.erazojavier.proyecto_mybudget.databinding.FragmentEgresoNuevoBinding
 import com.erazojavier.proyecto_mybudget.databinding.FragmentIngresoNuevoBinding
+import com.erazojavier.proyecto_mybudget.models.CuentaBancaria
 import com.erazojavier.proyecto_mybudget.models.Egreso
 import com.erazojavier.proyecto_mybudget.models.Ingreso
 import com.google.firebase.firestore.ktx.firestore
@@ -72,6 +75,42 @@ class EgresoNuevoFragment : Fragment() {
             .add(egresoNuevo)
             .addOnSuccessListener { documentReference ->
                 Toast.makeText(activity, "Ingreso Correcto", Toast.LENGTH_LONG).show()
+                debitarValorCuenta(usuario, egresoNuevo.cuentaBancaria, Integer.valueOf(egresoNuevo.montoEgreso))
+
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(activity, "ERROR: $e", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    private fun debitarValorCuenta(usuario: String, numeroCta: String, monto: Int){
+
+        var idCuenta = ""
+        var cuentaTemporal = CuentaBancaria()
+        db.collection("bancos_usuario")
+            .whereEqualTo("numeroCuenta", numeroCta)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                    idCuenta = document.id
+                    cuentaTemporal  = document.toObject(CuentaBancaria::class.java)
+                    var saldoFinal = (Integer.valueOf(cuentaTemporal.montoInicial)-monto)
+                    cuentaTemporal.montoInicial = saldoFinal.toString()
+
+                }
+
+                //Mandamos a actualizar el valor
+                db.collection("bancos_usuario")
+                    .document(idCuenta)
+                    .set(cuentaTemporal)
+                    .addOnSuccessListener {
+                        Toast.makeText(activity,"Saldo actualizado exitosamente", Toast.LENGTH_LONG).show()
+                    }
+                    .addOnFailureListener { exception ->
+                        Toast.makeText(activity,"Error al actualizar la cuenta" , Toast.LENGTH_LONG).show()
+                    }
+
 
             }
             .addOnFailureListener { e ->

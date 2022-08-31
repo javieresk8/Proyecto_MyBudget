@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.erazojavier.proyecto_mybudget.R
 import com.erazojavier.proyecto_mybudget.databinding.FragmentIngresoNuevoBinding
+import com.erazojavier.proyecto_mybudget.models.CuentaBancaria
 import com.erazojavier.proyecto_mybudget.models.Ingreso
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -73,6 +74,41 @@ class IngresoNuevoFragment : Fragment() {
             .add(ingresoNuevo)
             .addOnSuccessListener { documentReference ->
                 Toast.makeText(activity, "Ingreso Correcto", Toast.LENGTH_LONG).show()
+                acreditarValorCuenta(usuario, ingresoNuevo.cuentaBancaria, Integer.valueOf(ingresoNuevo.montoIngreso))
+
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(activity, "ERROR: $e", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    private fun acreditarValorCuenta(usuario: String, numeroCta: String, monto: Int){
+
+        var idCuenta = ""
+        var cuentaTemporal = CuentaBancaria()
+        db.collection("bancos_usuario")
+            .whereEqualTo("numeroCuenta", numeroCta)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    idCuenta = document.id
+                    cuentaTemporal  = document.toObject(CuentaBancaria::class.java)
+                    var saldoFinal = (Integer.valueOf(cuentaTemporal.montoInicial)+monto)
+                    cuentaTemporal.montoInicial = saldoFinal.toString()
+
+                }
+
+                //Mandamos a actualizar el valor
+                db.collection("bancos_usuario")
+                    .document(idCuenta)
+                    .set(cuentaTemporal)
+                    .addOnSuccessListener {
+                        Toast.makeText(activity,"Saldo actualizado exitosamente", Toast.LENGTH_LONG).show()
+                    }
+                    .addOnFailureListener { exception ->
+                        Toast.makeText(activity,"Error al actualizar la cuenta" , Toast.LENGTH_LONG).show()
+                    }
+
 
             }
             .addOnFailureListener { e ->

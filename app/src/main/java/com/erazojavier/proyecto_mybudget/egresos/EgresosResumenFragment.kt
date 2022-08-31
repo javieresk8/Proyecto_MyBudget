@@ -66,10 +66,8 @@ class EgresosResumenFragment : Fragment() {
                     egresos.add(egreso)
                 }
 
-                //TODO: No se esta llenando los registros
                 var sumaEgresos = 0
                 egresos.forEach { egreso ->
-                    println("El valor que egresa: " + egreso.nombreEgreso)
                     sumaEgresos +=egreso.montoEgreso.toInt()
                 }
                 binding.textViewMontoTotalEgresos.text = "$"+sumaEgresos.toString()
